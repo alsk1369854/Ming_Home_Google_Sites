@@ -1,8 +1,9 @@
 # Urllib Get Request
 
-> get請求: 將要查詢的參數添加在地址中
+> ### get請求
+#### 將要查詢的參數添加在地址中
 
-<br/><br/>
+<br/>
 
 > ## _前置作業_
 ```python
@@ -19,14 +20,13 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 ```
 
-<br/><br/>
+<br/>
 
 
 > ## 分析查詢網址
 
 ![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Urllib/images/get_url_analyze.png)
 
-<br/>
 
 ```python
 # 搜尋 林俊傑 後的網址
@@ -44,7 +44,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 ```
 
-<br/><br/>
+<br/>
 
 
 > ## 開始模擬搜索獲取數據
@@ -90,9 +90,9 @@ print(content)
 
 ```
 
-<br/><br/>
+<br/>
 
-> ## Output
+> ## _Output_
 ```html
 <!doctype html><html itemscope="" itemtype="http://schema.org/SearchResultsPage" lang="zh-TW"><head><meta charset="UTF-8"><meta content="origin" name="referrer"><meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"><title>林俊傑 - Google 搜尋</title><script nonce="VkwEgvZTKBbHqI57zGpt2Q==">(function(){
 var b=window.addEventListener;window.addEventListener=function(a,c,d){"unload"!==a&&b(a,c,d)};}).call(this);(function(){window.google={kEI:'jzdLYsjWJ-fd-Qa5q5CwBA',kEXPI:'31',kBL:'zIb2'};google.sn='web';google.kHL='zh-TW';})();(function(){
@@ -347,4 +347,4 @@ var Jj=_.q(_.Vd,Ij,17)||new Ij,Kj,Hj=(Kj=_.q(Jj,_.xj,1))?_.Sc(_.D(Kj,4)||""):nul
 google.jslm=3;</script><div id="reviewDialog" data-async-context="async_id_prefix:" data-jiis="up" data-async-type="reviewDialog" data-async-context-required="async_id_prefix" class="yp"></div><div id="dbg_"></div></div></body></html>
 ```
 
-### **End**
+### _End_

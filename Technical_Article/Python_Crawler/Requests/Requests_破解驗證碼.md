@@ -1,18 +1,20 @@
-# Requests 破解驗證碼登入
+# Requests 破解驗證碼
 
 > 這裡我們將使用 requests 中的 session() 方法將我們的的請求變成同一個物件
->
+> 
 > 目的是為了讓驗證碼作用領域與我們提交的領域相對應
 > 
 > 下面將演示在爬蟲中如何破解驗證碼進行登入
->
+> 
+> [國立高雄師範大學 單一登入 網路資訊平台](https://sso.nknu.edu.tw/userLogin/login.aspx?cUrl=/default.aspx)
 
 <br/>
 <br/>
 
-> ### _前置作業_
+> ## _前置準備工作_
 
-安裝 requests 與 bs4
+### 安裝 requests 與 bs4
+
 ```shell
 # 用於發送請求
 pip install requests
@@ -21,7 +23,10 @@ pip install requests
 pip install bs4 
 ```
 
-Python 準備作業
+<br/>
+
+### Python 準備作業
+
 ```python
 # 導入 requests 庫
 import requests
@@ -36,12 +41,11 @@ login_page_url = 'https://sso.nknu.edu.tw/userLogin/login.aspx?cUrl=/default.asp
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36'
 }
-
 ```
 
 <br/><br/>
 
-> ## 分析登入網頁
+# _分析登入頁面_
 
 > ### 利用登入失敗獲取登入請求
 
@@ -49,7 +53,7 @@ headers = {
 
 <br/><br/>
 
-> ###　獲取並分析提交登入攜帶的數據
+> ### 獲取並分析提交登入攜帶的數據
 
 ![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Requests/images/find_login_form_data.png)
 
@@ -90,15 +94,16 @@ form_data = {
 
 <br/><br/>
 
-> ###　在網頁中找到驗證碼請求地址
+> ### 在網頁中找到驗證碼請求地址
 
 ![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Requests/images/find_login_imgCode_url.png)
 
 <br/><br/>
 
-> ## 開始寫程式
+# _開始寫程式_
 
 > ### 製作 session 物件，將我們的的請求變成同一個物件
+
 ```python
 # 製作一個 session 物件
 session = requests.session()
@@ -110,7 +115,7 @@ request_login_page = session.get(url=login_page_url, headers=headers)
 login_page_text = request_login_page.text
 ```
 
-<br/><br/>
+<br/>
 
 > ### 利用 BeautifulSoup 解析出我們需要的數據
 
@@ -142,10 +147,9 @@ login_img_code_url = 'https://sso.nknu.edu.tw' + login_img_code
 print('@login_img_code_url: ' + login_img_code_url)
 # output
 # @login_img_code_url: https://sso.nknu.edu.tw/userLogin/login.aspx?cSec=31&cFunction=img
-
 ```
 
-<br/><br/>
+<br/>
 
 > ### 下載驗證碼圖片到本地並輸入驗證碼
 
@@ -165,12 +169,12 @@ with open('login_img_code.jpg', 'wb')as fp:
 
 # 查看下載的驗證碼圖片並輸入驗證碼 (有時IDE顯示比較慢，可以去實體目錄中查看)
 input_login_img_code = input('輸入驗證碼: ')
-
 ```
 
-<br/><br/>
+<br/>
 
 > ### 發送登入請求
+
 ```python
 # 設定我們上面找到的登入提交請求地址
 login_submit_url = 'https://sso.nknu.edu.tw/userLogin/login.aspx?cUrl=%2fdefault.aspx'
@@ -206,11 +210,10 @@ with open('student.html', 'w', encoding='utf-8')as fp:
 
 <br/><br/>
 
-> ## 最後下載的 student.html 畫面
+# _最後下載的 student.html 畫面_
 
 ![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Requests/images/login_student_page.png)
 
+<br/>
 
-### **End**
-
-
+### _End_

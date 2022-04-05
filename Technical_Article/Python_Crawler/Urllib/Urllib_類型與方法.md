@@ -1,10 +1,10 @@
-# Urllib 一個類型 六個方法
+# Urllib 類型與方法
 
-一個類型
+### 一個類型
 
 > HTTPRespnse
 
-六個方法
+### 六個方法
 
 > read() => 以字節的方式讀取
 > 
@@ -18,7 +18,10 @@
 > 
 > getheaders() => 獲取狀態訊息
 
-### _請求一個網址_
+<br/>
+
+> ## _前置作業_
+### 請求一個網址
 
 ```python
 # 導庫
@@ -29,9 +32,11 @@ url = 'https://sites.google.com/view/chiamingliang/about-ming'
 response = urillb.request.urlopen(url)
 ```
 
-## 一個類型
+<br/>
 
-Response 的類型 (是一個HTTPResponse類型)
+> ## 一個類型
+
+### Response 的類型 (是一個HTTPResponse類型)
 
 ```python
 print(type(response))
@@ -42,9 +47,11 @@ print(type(response))
 '''## 
 ```
 
-## 六個方法
+<br/>
 
-一個字節一個字節的讀取數據 (開頭b代表為二進制碼)
+> ## 六個方法
+
+### 一個字節一個字節的讀取數據 (開頭b代表為二進制碼)
 
 ```python
 print(response.read())
@@ -63,7 +70,9 @@ b'<!DOC'
 '''
 ```
 
-讀取一行 (讀到'\n')
+<br/>
+
+### 讀取一行 (讀到'\n')
 
 ```python
 print(response.readline())
@@ -75,7 +84,9 @@ b'<!DOCTYPE html><html lang="en-US" itemscope itemtype="http://schema.org/WebPag
 '''
 ```
 
-讀完所有行
+<br/>
+
+### 讀完所有行
 
 ```python
 print(response.readlines())
@@ -86,7 +97,9 @@ print(response.readlines())
 '''
 ```
 
-獲取狀態 (返回200代表邏輯正確)
+<br/>
+
+### 獲取狀態 (返回200代表邏輯正確)
 
 ```python
 print(respnse.getcode())
@@ -96,8 +109,9 @@ print(respnse.getcode())
 200
 '''
 ```
+<br/>
 
-獲取 url 地址
+### 獲取 url 地址
 
 ```python
 print(respnse.geturl())
@@ -108,7 +122,9 @@ https://sites.google.com/view/chiamingliang/about-ming
 '''
 ```
 
-獲取狀態訊息
+<br/>
+
+### 獲取狀態訊息
 
 ```python
 print(respnse.getheaders())
@@ -118,5 +134,7 @@ print(respnse.getheaders())
 [('Content-Type', 'text/html; charset=utf-8'), ('X-Frame-Options', 'DENY'), ('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate'), ('Pragma', 'no-cache'), ('Expires', 'Mon, 01 Jan 1990 00:00:00 GMT'), ('Date', 'Sun, 03 Apr 2022 16:02:51 GMT'), ('P3P', 'CP="This is not a P3P policy! See g.co/p3phelp for more info."'), ('Cross-Origin-Opener-Policy', 'unsafe-none'), ('Content-Security-Policy', "base-uri 'self';object-src 'none';report-uri /_/view/cspreport;script-src 'nonce-FMVokyxnRdyccR2XFmW11A' 'unsafe-inline' 'unsafe-eval';worker-src 'self';frame-ancestors https://google-admin.corp.google.com/"), ('Referrer-Policy', 'origin'), ('Server', 'ESF'), ('X-XSS-Protection', '0'), ('X-Content-Type-Options', 'nosniff'), ('Set-Cookie', 'NID=511=CC3leBPVqaO0pSsHsJ-BT-srjEA6HU2FUO342bfCkXkGrHNKpQ1heQj0ZEXrymJaw-9erefG1ZQ_81RV2CDbQ5xICfgAdxRijePm376nFgz8Vqy05L39Zwqg3Mj1NPKG96DHJKpBVBwawR-6WC9eNNiGRDUWVo_IE_Sb26ETjMc; expires=Mon, 03-Oct-2022 16:02:50 GMT; path=/; domain=.google.com; HttpOnly'), ('Alt-Svc', 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"'), ('Accept-Ranges', 'none'), ('Vary', 'Accept-Encoding'), ('Connection', 'close'), ('Transfer-Encoding', 'chunked')]
 '''
 ```
+
+<br/>
 
 ### **End**

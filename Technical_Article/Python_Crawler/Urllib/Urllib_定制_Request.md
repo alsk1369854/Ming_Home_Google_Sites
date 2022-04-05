@@ -1,4 +1,4 @@
-# 請求對象的定制
+# 定制 Request
 
 > 大多數請求會需要 Headers 數據
 >
@@ -8,9 +8,9 @@
 
 
 
-<br/><br/>
+<br/>
 
-> ### _前置準備作業_
+> ## _前置準備作業_
 
 ```python
 # 導入urllib 庫
@@ -28,14 +28,14 @@ url = 'http://sites.google.com/view/chiamingliang/about-ming'
 
 ```
 
-<br/><br/>
+<br/>
 
 > ## 取得 Header 數據
 
 ![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Urllib/images/get_headers_info.png)
 
 
-<br/><br/>
+<br/>
 
 > ## 包裝 Request
 
@@ -51,7 +51,7 @@ request = urllib.request.Request(url=url, headers=headers)
 
 ```
 
-<br/><br/>
+<br/>
 
 > ## 獲取數據
 
@@ -69,9 +69,9 @@ print(content)
 
 ```
 
-<br/><br/>
+<br/>
 
-> ## Output
+> ## _Output_
 ```html
 <!DOCTYPE html><html lang="en-US" itemscope itemtype="http://schema.org/WebPage"><head><meta charset="utf-8"><script nonce="DiqbLOOYQnZC8WuC7NqrDg">var DOCS_timing={}; DOCS_timing['sl']=new Date().getTime();</script><script nonce="DiqbLOOYQnZC8WuC7NqrDg">function _DumpException(e) {throw e;}</script><script nonce="DiqbLOOYQnZC8WuC7NqrDg">_docs_flag_initialData={"atari-emtpr":false,"atari-efpe":false,"atari-etsm":true,"atari-etss":false,"atari-etsswfm":false,"atari-ebidm":false,"atari-ebids":false,"docs-sup":"","docs-eldi":false,"docs-eiq":false,"docs-ecci":false,"docs-eeii":false,"docs-ipmmp":true,"docs-esi":false,"docs-liap":"/logImpressions","ilcm":{"eui":"AHKXmL2rK7QBiLSBfk2GvgSI0j6RiiSun1t18kb7gOhwY1CT0mZ6uHKgg4NIMXJ-cIdr74dx9zRl","je":1,"sstu":1649087600589000,"si":"CLzxi4Xi-vYCFUKeIwAd4RQIsQ","gsc":null,"ei":[5703839,5704621,5706832,5706836,5707711,5708870,5711808,5713207,5714550,5714628,5720060,5720925,5721344,5729664,5732942,5734571,5734896,5734954,5735806,5737337,5737441,5738509,5738529,5739802,5740814,5741775,5742462,5743124,5745622,5747263,5747741,5748029,5749679,5752694,5753006,5753329,5754229,5754788,5756315,5758193,5761523,5763092,5764268,14101306,14101502,14101510,14101530,14101534],"crc":0,"cvi":[]},"docs-ccdil":false,"docs-eil":true,"docs-eoi":false,"info_params":{},"atari-jefp":"/_/view/jserror","docs-jern":"view","atari-rhpp":"/_/view"}; _docs_flag_cek= null ; if (window['DOCS_timing']) {DOCS_timing['ifdld']=new Date().getTime();}</script><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="referrer" content="strict-origin-when-cross-origin"><link rel="icon" href="https://ssl.gstatic.com/atari/images/public/favicon.ico"><meta property="og:title" content="Chia-Ming Liang　梁家銘"><meta property="og:type" content="website"><meta property="og:url" content="https://sites.google.com/view/chiamingliang/about-ming"><meta property="og:description" content="
 梁家銘 Chia-Ming Liang"><meta itemprop="name" content="Chia-Ming Liang　梁家銘"><meta itemprop="description" content="
@@ -123,4 +123,4 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
 ```
 
 
-### **End**
+### _End_
