@@ -11,6 +11,7 @@
 <br/>
 
 > ### _前置作業_
+
 安裝 requests 與 bs4
 ```shell
 # 用於發送請求
@@ -40,15 +41,15 @@ headers = {
 
 <br/><br/>
 
-## 分析登入網頁
+> ## 分析登入網頁
 
-利用登入失敗獲取登入請求
+> ### 利用登入失敗獲取登入請求
 
 ![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Requests/images/find_login_submit_url.png)
 
-<br/>
+<br/><br/>
 
-獲取並分析提交登入攜帶的數據
+> ###　獲取並分析提交登入攜帶的數據
 
 ![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Requests/images/find_login_form_data.png)
 
@@ -81,24 +82,21 @@ form_data = {
 }
 ```
 
-<br/>
+<br/><br/>
 
-在網頁中找到 __VIEWSTATE __VIEWSTATEGENERATOR 數據
+> ### 在網頁中找到 __VIEWSTATE __VIEWSTATEGENERATOR 數據
 
 ![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Requests/images/find_form_data_value.png)
 
-<br/>
+<br/><br/>
 
-在網頁中找到驗證碼請求地址
-在網頁中找到 __VIEWSTATE __VIEWSTATEGENERATOR 數據
+> ###　在網頁中找到驗證碼請求地址
 
 ![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Requests/images/find_login_imgCode_url.png)
 
 <br/><br/>
 
 > ## 開始寫程式
-
-<br/><br/>
 
 > ### 製作 session 物件，將我們的的請求變成同一個物件
 ```python
@@ -170,6 +168,8 @@ input_login_img_code = input('輸入驗證碼: ')
 
 ```
 
+<br/><br/>
+
 > ### 發送登入請求
 ```python
 # 設定我們上面找到的登入提交請求地址
@@ -207,6 +207,9 @@ with open('student.html', 'w', encoding='utf-8')as fp:
 <br/><br/>
 
 > ## 最後下載的 student.html 畫面
+
+![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Requests/images/login_student_page.png)
+
 
 ### **End**
 
