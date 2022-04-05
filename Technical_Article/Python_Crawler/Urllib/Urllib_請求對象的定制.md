@@ -32,7 +32,7 @@ url = 'http://sites.google.com/view/chiamingliang/about-ming'
 
 > ## 取得 Header 數據
 
-![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Python_Crawler/get_headers_info.png)
+![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Urllib/images/get_headers_info.png)
 
 
 <br/><br/>

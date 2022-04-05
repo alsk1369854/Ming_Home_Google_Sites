@@ -27,7 +27,7 @@ urllib.request.urlretrieve(url, filename)
 # 下載後的當案會出現在專案的目錄內
 ```
 
-![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Python_Crawler/download_file_storage_location.png)
+![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Urllib/images/download_file_storage_location.png)
 
 <br/><br/>
 
@@ -53,7 +53,7 @@ url_demo_img = 'https://lh4.googleusercontent.com/VlEG9nDlEsojAvqYvgU9C2ajETFSX7
 urllib.request.urlretrieve(url=url_demo_img, filename='demo_img.png')
 ```
 
-![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Python_Crawler/download_image_demo.png)
+![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Urllib/images/download_image_demo.png)
 
 <br/><br/>
 
@@ -67,7 +67,7 @@ url_demo_video = 'https://vd4.bdstatic.com/mda-nc9641cs73ae8isf/sc/cae_h264_delo
 urllib.request.urlretrieve(url_demo_video, 'demo_video.mp4')
 ```
 
-![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Python_Crawler/download_video_demo.png)
+![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Urllib/images/download_video_demo.png)
 
 <br/><br/>
 

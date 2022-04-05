@@ -24,7 +24,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 > ## 分析查詢網址
 
-![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Python_Crawler/get_url_analyze.png)
+![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/Python_Crawler/Urllib/images/get_url_analyze.png)
 
 <br/>
 
