@@ -126,7 +126,7 @@ soup = BeautifulSoup(login_page_text, 'lxml')
 # 獲取 __VIEWSTATE 值
 viewstate = soup.select('#__VIEWSTATE')[0].attrs.get('value')
 # 打印 __VIEWSTATE 值
-print('@__VIEWSTATE: ' + viewstate)
+print('@__VIEWSTATE: ' + str(viewstate))
 # output
 # @__VIEWSTATE: 9BFVm/9yljVz4M5yKl6iKBgLeuFG3maa9WAjvX/iqUmUsSPIQgS80nskPqwYoHYtgtWNSPLyfBG1QtuF2tj5LrKcf6/l2WKY79hY0fHa4js+VVKlJCFau+FUlg9LHx2NLysamKcDM4KZyoPzqIzfMAYkUxU6doeQpsjvZ6FVN8pa4Qs5IZtmcX88CCaBipLMCjZrNrw6Un362Iy+6njc6PMfCktKnvruoQXB4+VEPMKi22lRiDKxAuVKbQxd8f1hTzW0oqoyKjBUQDAz6ASnFfg7J0uDq+8PvcqYaOIxQN/Rs9xC6ZqLzYKnDeV7mwO5og5xH9+gFVUhgm8r+m/qKTZLTchp5mZiAByTFGOQ05lp9H4CwgLy43nlJ/gCGOwNNLsPpcF6FS3W3+rVrGsRM8b6hZmp9NbDfq/VYpNroSrH7zMnFXxYGWfhBZY+QIwG1+kFYWQXuLVxHJQkm0CoJagPe5cLHPZ/gqUufRx2utWgCqaVntA5awopLyGlF7vFxQrxHen9PlWKeY9wdR3ZrpDnYO/0Gdd3gBuBSUySULbEckBwZrTbgH/fuQpIRqefP+PyQoMowxHqiUp2Oq4dGmexcQ0spZi3OI9uAlOX2VUc/rH7jAifAAjls4KElBMh4QRK9spMVuSloiHW+W38LDHoQfUIwKi8eyf8s+ja2gU8rwCVYCxDh2FAnDit+QukLni2UJD2N6ZYfaTlRy/35i1KL17wnrcsovpaBHb6AT2fM3itvMtPJr1wgfG7+JEecoUPvXA+KNPvXEMcZE3U3IhgJbn2uppKVRbu2G8pQIK8MhdLQPNmD9TEmxCdu4hHnn7meGSQxP2HuAmWZYHq7MkTgVZXgaCP/z3tSETu2YHskGvZz758ihz8acjNf0pNc2o0zi6zcRbpbR6n5kFFGIOwaze09bWWcPyA1rrjzpXiAjkzxn9S/2sxBGCZFUHIMuP1jVZdWcyO3pnWc50bHzpxthI30/aD//OXIoZdiN/VHuftb+OQJh7CfqDnURllLW0rl5YCTE0gzZDyD3MXYabNjOqiMegNKuS0EnLNytCPXk8dvfKPOZPwBfJxF9MtHwTzTw==
 
@@ -134,7 +134,7 @@ print('@__VIEWSTATE: ' + viewstate)
 # 獲取 __VIEWSTATEGENERATOR
 viewstategenerator = soup.select('#__VIEWSTATEGENERATOR')[0].attrs.get('value')
 # 打印 __VIEWSTATEGENERATOR 值
-print('@__VIEWSTATEGENERATOR: ' + viewstategenerator)
+print('@__VIEWSTATEGENERATOR: ' + str(viewstategenerator))
 # output
 # @__VIEWSTATEGENERATOR: D84C7206
 
@@ -144,7 +144,7 @@ login_img_code = soup.find(attrs={"title": "*"}).get('src')
 # 組合上地址頭，使其成為完整地址
 login_img_code_url = 'https://sso.nknu.edu.tw' + login_img_code
 # 打印 驗證碼 請求地址
-print('@login_img_code_url: ' + login_img_code_url)
+print('@login_img_code_url: ' + str(login_img_code_url))
 # output
 # @login_img_code_url: https://sso.nknu.edu.tw/userLogin/login.aspx?cSec=31&cFunction=img
 ```
