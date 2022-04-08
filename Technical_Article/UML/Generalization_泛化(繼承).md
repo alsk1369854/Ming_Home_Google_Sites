@@ -27,7 +27,7 @@ public class CollegeStudent extends Student {
 >
 > 一個類（子類、子介面）繼承另外一個類（稱為父類、父介面）的功能，並可以增加它自己新功能的能力。
 >
-> 上方代碼展現了 MiddleSchoolStudent類 與 CollegeStudent類 都繼承了 Student類 的屬性與方法
+> __上方代碼展現了 MiddleSchoolStudent類 與 CollegeStudent類 都繼承了 Student類 的屬性與方法__
 
 <br/>
 

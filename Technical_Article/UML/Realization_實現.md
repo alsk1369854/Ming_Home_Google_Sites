@@ -31,7 +31,7 @@ public class Dog implements Runnable {
 >
 > 一個class實現interface介面（一個或者多個），表示類具備了某種能力
 >
-> 上方代碼展現了 Dog類 與 Cat類 都實現了跑的功能，而 Cat類 又在另外的實現了飛的功能
+> __上方代碼展現了 Dog類 與 Cat類 都實現了跑的功能，而 Cat類 又在另外的實現了飛的功能__
 
 <br/>
 
