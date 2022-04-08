@@ -22,14 +22,14 @@ class Student{
     public static int nextID = 1;
 
     // Constructor
-    public Student(name String, age int) {...}
+    public Student(name String, age int) { .... }
 
     // Operation
-    public String getName() {...}
-    public void setName(newName String) {...}
-    public int getAge() {...}
-    protected setAge(newAge int) {...}
-    void fallInLove() {...}
+    public String getName() { .... }
+    public void setName(newName String) { .... }
+    public int getAge() { .... }
+    protected setAge(newAge int) { .... }
+    void fallInLove() { .... }
 }
 ```
 > ### Description
