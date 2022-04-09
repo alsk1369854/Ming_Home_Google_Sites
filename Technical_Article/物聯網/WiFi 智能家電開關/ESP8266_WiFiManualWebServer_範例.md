@@ -1,3 +1,35 @@
+# ESP8266 WiFiManualWebServer 範例
+
+> Arduino IDE 添加擴充庫
+>
+> 開啟 WiFiManualWebServer 範例
+>
+> WiFiManualWebServer 範例內碼解說
+
+<br/>
+
+> ## Arduino IDE 添加擴充庫
+
+###  ESP8266 Lib: http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
+<center>
+
+![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/物聯網/WiFi%20智能家電開關/images/import_esp8266_lib.png)
+</center>
+
+<br/><br/>
+
+> ## 開啟 WiFiManualWebServer 範例
+
+<center>
+
+![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/物聯網/WiFi%20智能家電開關/images/esp8266_WiFiManualWebServer_introduce.png)
+</center>
+
+<br/><br/>
+
+> ## WiFiManualWebServer 範例內碼解說
+```c++
 /*
     This sketch demonstrates how to set up a simple HTTP-like server.
     The server will set a GPIO pin depending on the request
@@ -110,5 +142,10 @@ void loop() {
   // 在監控視窗中打印以和 Client 端開連線
   Serial.println(F("Disconnecting from client"));
   
-  // 繼續回去監聽 有沒新的 Client 做連線
+  // 繼續回去監聽等待下一次 Client 做連線
 }
+```
+
+<br/>
+
+#### _END_
