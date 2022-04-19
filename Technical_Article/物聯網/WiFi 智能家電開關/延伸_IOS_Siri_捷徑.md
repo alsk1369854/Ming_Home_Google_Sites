@@ -16,12 +16,26 @@
 <br/>
 
 > ## 安裝 IOS 捷徑App
-### Step 1:
-
 <center>
 
-![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/物聯網/WiFi%20智能家電開關/images/CH340_ESP8266_IO_引角圖.jpg)
+![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/物聯網/WiFi%20智能家電開關/images/ios_shortcut_1.jpg)
 </center>
 
+<br/>
 
+> ## 設定 新的捷徑 (新的Siri語音指令)
+### Step 1: 開啟下載好的捷徑App
+<center>
 
+![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/物聯網/WiFi%20智能家電開關/images/ios_shortcut_2.jpg)
+</center>
+
+<br/>
+
+### Step 1: 開啟下載好的捷徑App
+<center>
+
+![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/物聯網/WiFi%20智能家電開關/images/ios_shortcut_2.jpg)
+</center>
+
+<br/>
