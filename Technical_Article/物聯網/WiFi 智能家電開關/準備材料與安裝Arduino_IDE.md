@@ -26,6 +26,16 @@
 ![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/物聯網/WiFi%20智能家電開關/images/download_arduino_2.png)
 </center>
 
-<br>
+<br/>
+
+> ### _使用 Arduino IDE 燒入程式_
+
+<center>
+
+![](https://raw.githubusercontent.com/alsk1369854/Ming_Home_Google_Sites/master/Technical_Article/物聯網/WiFi%20智能家電開關/images/燒入程式流程.png)
+</center>
+
+<br/>
+
 
 #### _END_
