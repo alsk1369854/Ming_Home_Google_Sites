@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+    <meta charset=UTF-8>
+    <!-- 手機應用系統名稱 -->
+    <meta name=apple-mobile-web-app-title content='MING Controller'>
+    <!-- 讓Safari在讀取網頁知道這個網頁有原生APP的特性 -->
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <!-- 手機應用不顯示手機瀏海 -->
+    <meta name=apple-mobile-web-app-status-bar-style content=black-translucent>
+    <!-- 手機端排版設定 -->
+    <meta name=viewport content='width=device-width, initial-scale=1.0'>
+    <!-- 導入React -->
+    <script src=https://unpkg.com/react@17/umd/react.development.js crossorigin></script>
+    <script src=https://unpkg.com/react-dom@17/umd/react-dom.development.js crossorigin></script>
+    <!-- 導入 babel 幫助編譯 jsx -->
+    <script src=https://unpkg.com/@babel/standalone/babel.min.js></script>
+    <!-- 導入針對 React className 樣式工具 -->
+    <script src=https://unpkg.com/classnames@2.3.1/index.js></script>
+    <!-- 導入頁面icon -->
+    <script src=https://kit.fontawesome.com/8d3fcba981.js></script>
+    <!-- 導入 axios ajax 請求工具 -->
+    <script src=https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js></script>
+    <title>MING Controller</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+            background-color: #897F83;
+        }
+
+        .main {
+            background-color: #eae1d9;
+            height: 100vh;
+            width: 100vw;
+            overflow: auto
+        }
+
+        .line {
+            background-color: #6667748e;
+            height: 2px;
+            margin: 0 45px;
+            border-radius: 30px
+        }
+
+        .SwitchExecute {
+            color: white;
+            background-color: #C0A38B
+        }
+
+        .onIconColor {
+            color: #9dbd69
+        }
+
+        .head {
+            position: sticky;
+            display: flex;
+            justify-content: space-between;
+            top: 0;
+            background-color: #897F83;
+            height: auto;
+            width: 100%;
+            border-radius: 0 0 30px 30px
+        }
+
+        .head>.headText {
+            display: flex;
+            align-items: flex-end;
+            height: 120px;
+            margin-left: 30px;
+            font-size: 75px;
+            font-weight: bold;
+            color: white
+        }
+
+        .refresh {
+            display: flex;
+            align-items: flex-end;
+            margin: 0 30px 23px 0;
+            color: white;
+            font-size: 40px
+        }
+
+        .rotate {
+            animation: rotation 2s infinite linear
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg)
+            }
+
+            to {
+                transform: rotate(359deg)
+            }
+        }
+
+        .title,
+        .item {
+            height: 65px
+        }
+
+        .title {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin: 0 20px 2px 20px;
+            font-weight: bold;
+            color: #6667748e;
+            font-size: 20px
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            margin: 1px 3px
+        }
+
+        .item>a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            width: 100%;
+            border-radius: 45px;
+            padding: 0 33px 0 20px;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: bold
+        }
+
+        .item>.itemTextColor {
+            color: #676872
+        }
+    </style>
+
+<body>
+    <div id=root></div>
+    <script type="text/babel">
+        class App extends React.Component {
+            constructor(props) {
+                super(props)
+                // 初次開啟網頁
+                // 將每個按鈕的狀態初始化
+                let itemExecute = {}
+                for (const [key] of Object.entries(props.StateData)) {
+                    itemExecute = { ...itemExecute, [key]: false };
+                }
+                // 設定初始 state
+                this.state = {
+                    data: { ...props.StateData },
+                    itemExecute,
+                    doRefresh: false
+                }
+            }
+
+            // 刷新頁面 
+            refreshFn = () => {
+                this.setState({ doRefresh: true });
+                let url = 'http://' + this.props.IP;
+
+                // 製作結束執行樣式函數
+                let setStateFn = () => this.setState({ doRefresh: false })
+                // this.updateSateDateFn(url, setStateFn.bind(this));
+                setTimeout(() => setStateFn(), 1000)
+
+            }
+
+            // 執行按鈕操作
+            executeSwitchFn = (switchName) => {
+                // 開啟執行中的樣式
+                this.setState({ itemExecute: { mainLightSwitch: true } });
+                // 製作結束執行樣式函數
+                const nowSwitchState = this.state.data.mainLightSwitch
+                console.log(nowSwitchState)
+                let setStateFn = () => {
+                    this.setState({
+                        data: { mainLightSwitch: !nowSwitchState },
+                        itemExecute: { mainLightSwitch: false }
+                    })
+
+                }
+                setTimeout(() => setStateFn(), 1000)
+            }
+
+            // 更新新的狀態回畫面
+            updateSateDateFn = (url, setStateFn) => {
+                axios.get(url)
+                    .then((red) => {
+                        // 擷取新回傳的 StateData
+                        let responseData = red.data;
+                        let itemList = responseData.split('const StateData={')[2].split('}')[0].split(',');
+
+                        // 將 新Sate 更新回 Component State
+                        let newStateData = {};
+                        itemList.map((item) => {
+                            let temp = item.split(':');
+                            if (temp[1] == 'true') {
+                                newStateData = { ...newStateData, [temp[0]]: true };
+                            } else {
+                                newStateData = { ...newStateData, [temp[0]]: false };
+                            }
+                        })
+                        this.setState({ data: newStateData });
+
+                        // 關閉執行中的樣式 
+                        setStateFn();
+                    })
+                    .catch((error) => { console.error(error) })
+                    .finally(() => { console.log(url) });
+            }
+
+            // 組件要渲染的畫面
+            render() {
+                let { data, itemExecute, doRefresh } = this.state;
+                const refreshIconClassNames = classNames({
+                    'fas fa-sync color-white': true,
+                    'rotate': doRefresh
+                })
+                const mainLightSwitchClassNames = classNames({
+                    'itemTextColor': !itemExecute.mainLightSwitch,
+                    'SwitchExecute': itemExecute.mainLightSwitch
+                })
+                const mainLightSwitchIconClassNames = classNames({
+                    'fas fa-lightbulb': true,
+                    'onIconColor': data.mainLightSwitch
+                });
+
+                return (
+                    <div>
+                        <div className='main'>
+                            <div className='head'>
+                                <div className='headText'>MING</div>
+                                <div className='refresh'>
+                                    <a onClick={this.refreshFn}><i className={refreshIconClassNames}></i></a>
+                                </div>
+                            </div>
+                            <div className='title'>
+                                <div>Room 228</div>
+                                <div>State</div>
+                            </div>
+                            <div className='line'></div>
+                            <div className='item'>
+                                <a className={mainLightSwitchClassNames} id='mainLightSwitch' onClick={() => {
+                                    this.executeSwitchFn('ajaxMainLight')
+                                }}>
+                                    <div>Main Light</div>
+                                    <i id='mainLightSwitchIcon' className={mainLightSwitchIconClassNames}></i>
+                                </a>
+                            </div>
+                            <div className='line'></div>
+                            {/* add new item here*/}
+                            <div className='title'></div>
+                        </div>
+                    </div>
+                )
+            }
+        }
+
+        // 回傳新狀態接收區域
+        const IP = '127.0.0.1:5500/test.html';
+        const StateData = {
+            mainLightSwitch: true,
+            mainLightSwitch2: false,
+        }
+
+        // 將 APP 組件渲染到頁面
+        ReactDOM.render(<App IP={IP} StateData={StateData} />, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
